@@ -67,3 +67,11 @@ mongodb docs:
     }
 }
 ```
+
+
+## some notes
+
+* uppercase letters 
+
+use double quotes 
+
