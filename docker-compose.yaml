@@ -1,5 +1,15 @@
 version: "3"
 services: 
+  graphql-engine:
+    image: hasura/graphql-engine:v1.1.0-beta.3
+    ports:
+    - "8080:8080"
+    depends_on:
+    - "pg-mongo"
+    environment:
+      HASURA_GRAPHQL_DATABASE_URL: postgres://postgres:dalong@pg-mongo:5432/postgres
+      HASURA_GRAPHQL_ENABLE_CONSOLE: "true" # set to "false" to disable console
+      HASURA_GRAPHQL_ENABLED_LOG_TYPES: startup, http-log, webhook-log, websocket-log, query-log
   pg-mongo:
     image: dalongrong/pgspider:mongo
     ports:
