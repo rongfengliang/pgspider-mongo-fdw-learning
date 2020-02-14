@@ -1,0 +1,12 @@
+version: "3"
+services: 
+  pg-mongo:
+    image: dalongrong/pgspider:mongo
+    ports:
+      - "5432:5432"
+    environment:
+      - "POSTGRES_PASSWORD:dalong"
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"
